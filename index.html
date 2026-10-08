@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>🎁 Ваш подарок</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #111; color: #fff;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  .wrap { min-height: 100%; display: flex; align-items: center; justify-content: center;
+    flex-direction: column; text-align: center; padding: 16px; box-sizing: border-box; }
+  #loader .box { font-size: 96px; animation: shake .5s infinite; }
+  #loader p { font-size: 22px; opacity: .85; }
+  #gift { display: none; }
+  #gift img { max-width: 100%; max-height: 100vh; border-radius: 8px; animation: pop .4s ease-out; }
+  @keyframes shake { 0%,100% { transform: rotate(0) } 25% { transform: rotate(-12deg) } 75% { transform: rotate(12deg) } }
+  @keyframes pop { from { transform: scale(.3); opacity: 0 } to { transform: scale(1); opacity: 1 } }
+</style>
+</head>
+<body>
+  <div class="wrap" id="loader">
+    <div class="box">🎁</div>
+    <p>Открываем ваш подарок…</p>
+  </div>
+  <div class="wrap" id="gift">
+    <img src="gift.jpg" alt="Иди работай!">
+  </div>
+<script>
+  setTimeout(function () {
+    document.getElementById('loader').style.display = 'none';
+    document.getElementById('gift').style.display = 'flex';
+  }, 2000);
+</script>
+</body>
+</html>
